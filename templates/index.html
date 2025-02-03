@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poem Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>My Appreciation</h1>
+            <p class="subtitle">Heartfelt poem for someone special</p>
+            
+            <form action="{{ url_for('generate') }}" method="post">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required 
+                           placeholder="Enter their name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="relationship">Your Relationship</label>
+                    <input type="text" id="relationship" name="relationship" required 
+                           placeholder="e.g., Mother ">
+                </div>
+                
+                <button type="submit">Generate Poem</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Poem | Poem Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card result-card">
+            <h1>Your Poem</h1>
+            <div class="poem-container">
+                <p class="poem-text">{{ poem }}</p>
+                <p class="poem-for">For {{ name }}</p>
+            </div>
+            
+            <div class="actions">
+                <a href="{{ url_for('index') }}" class="button secondary">Create Another</a>
+                <a href="{{ url_for('my_poems') }}" class="button primary">View All Poems</a>
+                <button onclick="window.print()" class="button secondary">Print Poem</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

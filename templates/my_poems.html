@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Generated Poems</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>My Poems</h1>
+            <div class="poems-list">
+                {% for poem in poems %}
+                <div class="poem-entry">
+                    <div class="poem-meta">
+                        <span class="poem-date">{{ poem.created_at.strftime('%B %d, %Y') }}</span>
+                        <span class="poem-relationship">For: {{ poem.recipient_relationship }}</span>
+                    </div>
+                    <div class="poem-container">
+                        <p class="poem-text">{{ poem.poem_text }}</p>
+                        <p class="poem-for">By {{ poem.creator_name }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="actions">
+                <a href="{{ url_for('index') }}" class="button secondary">Create New Poem</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
